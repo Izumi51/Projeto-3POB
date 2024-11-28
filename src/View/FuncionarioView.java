@@ -1,10 +1,10 @@
 package View;
 
 //Java
-import java.util.Scanner;
-import java.io.*;
-//Control
+
 import Controller.FuncionarioController;
+
+import java.util.Scanner;
 
 public class FuncionarioView {
     public static void main(String[] args) {
@@ -40,15 +40,17 @@ public class FuncionarioView {
                     System.out.println("Selecione uma opcao: ");
                     int opp = in.nextInt();
                     System.out.println("------------------------");
+                    in.nextLine();
                     System.out.println("Insira o nome do Funcionario: ");
                     nome = in.nextLine();
                     System.out.println("Insira o salario do Funcionario: ");
                     salario = in.nextDouble();
-                    int id = 0;
-                    control.adicionarFuncionario(nome, salario, id, opp);
+
+                    control.adicionarFuncionario(nome, salario, opp);
                     break;
 
                 case 2:
+                    in.nextLine();
                     System.out.println("Insira o numero do Funcionario a ser alterado: ");
                     numero = in.nextInt();
 
@@ -56,6 +58,7 @@ public class FuncionarioView {
                     break;
 
                 case 3:
+                    in.nextLine();
                     System.out.println("Insira o numero do Funcionario a ser excluido: ");
                     numero = in.nextInt();
 

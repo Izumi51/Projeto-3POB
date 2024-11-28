@@ -1,11 +1,12 @@
 package Controller;
 
 //Classes
+
 import Model.*;
-//Java
-import java.util.Scanner;
-import java.util.ArrayList;
+
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class FuncionarioController {
     private ArrayList<Funcionario> funcionarios;
@@ -17,15 +18,16 @@ public class FuncionarioController {
         carregarFuncionarios();
     }
 
-    public void adicionarFuncionario(String nome, double salario, int id, int tipo) {
+    public void adicionarFuncionario(String nome, double salario, int tipo) {
         Funcionario funcionario = switch (tipo) {
-            case 1 -> new Gerente(nome, salario, id);
-            case 2 -> new Treinador(nome, salario, id);
-            case 3 -> new Desenvolvedor(nome, salario, id);
-            case 4 -> new GerenteDesenvolvedor(nome, salario, id);
+            case 1 -> new Gerente(nome, salario, maiorId);
+            case 2 -> new Treinador(nome, salario, maiorId);
+            case 3 -> new Desenvolvedor(nome, salario, maiorId);
+            case 4 -> new GerenteDesenvolvedor(nome, salario, maiorId);
             default -> null;
         };
 
+        maiorId+=1;
         funcionarios.add(funcionario);
         salvarFuncionario();
     }
@@ -57,6 +59,7 @@ public class FuncionarioController {
         if (funcio != null) {
             Scanner in = new Scanner(System.in);
 
+            in.nextLine();
             System.out.println("Insira um novo nome: ");
             String nome = in.nextLine();
             System.out.println("Insira um novo salario: ");
