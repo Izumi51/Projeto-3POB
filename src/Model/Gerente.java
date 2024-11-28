@@ -4,8 +4,8 @@ public class Gerente extends Funcionario implements Gerencia {
     private final String tipo = "Gerente";
 
     //CONSTRUCTOR
-    public Gerente(String nome, double salario) {
-        super(nome, salario);
+    public Gerente(String nome, double salario, int id) {
+        super(nome, salario, id);
     }
 
     //GET
@@ -17,7 +17,7 @@ public class Gerente extends Funcionario implements Gerencia {
     //METODOS
     @Override
     public void mostrarDetalhes() {
-
+        System.out.println("\n\nNome: " + getNome() + "\nTipo: " + getTipo() + "\nSalario: " + getSalario());
     }
 
     @Override

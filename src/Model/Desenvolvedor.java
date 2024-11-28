@@ -4,8 +4,8 @@ public class Desenvolvedor extends Funcionario implements Desenvolve {
     private final String tipo = "Desenvolvedor";
 
     //CONSTRUCTOR
-    public Desenvolvedor(String nome, double salario) {
-        super(nome, salario);
+    public Desenvolvedor(String nome, double salario, int id) {
+        super(nome, salario, id);
     }
 
     //GET
@@ -27,6 +27,6 @@ public class Desenvolvedor extends Funcionario implements Desenvolve {
 
     @Override
     public void mostrarDetalhes() {
-
+        System.out.println("\n\nNome: " + getNome() + "\nTipo: " + getTipo() + "\nSalario: " + getSalario());
     }
 }

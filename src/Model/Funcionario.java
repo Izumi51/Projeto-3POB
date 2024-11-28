@@ -3,11 +3,13 @@ package Model;
 public abstract class Funcionario {
     private String nome;
     private double salario;
+    private int id;
 
     //CONSTRUCTOR
-    public Funcionario(String nome, double salario){
+    public Funcionario(String nome, double salario, int id){
         this.nome = nome;
         this.salario = salario;
+        this.id = id;
     }
 
     // GET
@@ -19,6 +21,10 @@ public abstract class Funcionario {
         return nome;
     }
 
+    public int getId() {
+        return id;
+    }
+
     //SET
     public void setNome(String nome) {
         this.nome = nome;
@@ -26,6 +32,10 @@ public abstract class Funcionario {
 
     public void setSalario(double salario) {
         this.salario = salario;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public abstract String getTipo();
